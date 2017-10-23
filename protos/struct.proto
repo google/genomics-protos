@@ -31,7 +31,7 @@
 syntax = "proto3";
 
 // Copied from original in package google.protobuf;
-package learning.genomics.v1;
+package google.genomics.v1;
 
 option cc_enable_arenas = true;
 

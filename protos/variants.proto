@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-package learning.genomics.v1;
+package google.genomics.v1;
 
 import "learning/biotensorflow/core/genomics/struct.proto";
 
