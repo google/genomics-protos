@@ -18,9 +18,9 @@ syntax = "proto3";
 
 package google.genomics.v1;
 
-import "learning/biotensorflow/core/genomics/cigar.proto";
-import "learning/biotensorflow/core/genomics/position.proto";
-import "learning/biotensorflow/core/genomics/struct.proto";
+import "protos/cigar.proto";
+import "protos/position.proto";
+import "protos/struct.proto";
 
 option cc_enable_arenas = true;
 
