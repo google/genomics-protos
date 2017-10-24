@@ -18,7 +18,7 @@ syntax = "proto3";
 
 package google.genomics.v1;
 
-import "protos/struct.proto";
+import "google/genomics/v1/struct.proto";
 
 option cc_enable_arenas = true;
 

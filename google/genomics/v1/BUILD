@@ -19,14 +19,6 @@ cc_proto_library(
     protoc = "//external:protoc",
 )
 
-py_proto_library(
-    name = "struct_py_pb2",
-    srcs = ["struct.proto"],
-    default_runtime = "//external:protobuf",
-    protoc = "//external:protoc",
-    srcs_version = "PY2AND3",
-)
-
 # ----------------------------------------------------------------------
 # Cigar
 # ----------------------------------------------------------------------
