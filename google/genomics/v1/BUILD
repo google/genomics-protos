@@ -1,5 +1,4 @@
-load("@protobuf_bzl//:protobuf.bzl", "py_proto_library")
-load("@protobuf_bzl//:protobuf.bzl", "cc_proto_library")
+load("@protobuf_bzl//:protobuf.bzl", "cc_proto_library", "py_proto_library")
 
 licenses(["notice"])
 
@@ -19,6 +18,13 @@ cc_proto_library(
     protoc = "//external:protoc",
 )
 
+py_proto_library(
+    name = "struct_py_pb2",
+    srcs = ["struct.proto"],
+    default_runtime = "@com_google_protobuf//:protobuf_python",
+    protoc = "@com_google_protobuf//:protoc",
+)
+
 # ----------------------------------------------------------------------
 # Cigar
 # ----------------------------------------------------------------------
@@ -33,6 +39,13 @@ cc_proto_library(
     srcs = ["cigar.proto"],
     default_runtime = "//external:protobuf",
     protoc = "//external:protoc",
+)
+
+py_proto_library(
+    name = "cigar_py_pb2",
+    srcs = ["cigar.proto"],
+    default_runtime = "@com_google_protobuf//:protobuf_python",
+    protoc = "@com_google_protobuf//:protoc",
 )
 
 # ----------------------------------------------------------------------
@@ -51,6 +64,13 @@ cc_proto_library(
     protoc = "//external:protoc",
 )
 
+py_proto_library(
+    name = "position_py_pb2",
+    srcs = ["position.proto"],
+    default_runtime = "@com_google_protobuf//:protobuf_python",
+    protoc = "@com_google_protobuf//:protoc",
+)
+
 # ----------------------------------------------------------------------
 # Range
 # ----------------------------------------------------------------------
@@ -65,6 +85,13 @@ cc_proto_library(
     srcs = ["range.proto"],
     default_runtime = "//external:protobuf",
     protoc = "//external:protoc",
+)
+
+py_proto_library(
+    name = "range_py_pb2",
+    srcs = ["range.proto"],
+    default_runtime = "@com_google_protobuf//:protobuf_python",
+    protoc = "@com_google_protobuf//:protoc",
 )
 
 # ----------------------------------------------------------------------
@@ -83,6 +110,14 @@ cc_proto_library(
     deps = [":struct_cc_pb2"],
     default_runtime = "//external:protobuf",
     protoc = "//external:protoc",
+)
+
+py_proto_library(
+    name = "variants_py_pb2",
+    srcs = ["variants.proto"],
+    deps = [":struct_py_pb2"],
+    default_runtime = "@com_google_protobuf//:protobuf_python",
+    protoc = "@com_google_protobuf//:protoc",
 )
 
 # ----------------------------------------------------------------------
@@ -109,5 +144,17 @@ cc_proto_library(
     ],
     default_runtime = "//external:protobuf",
     protoc = "//external:protoc",
+)
+
+py_proto_library(
+    name = "reads_py_pb2",
+    srcs = ["reads.proto"],
+    deps = [
+        ":cigar_py_pb2",
+        ":position_py_pb2",
+        ":struct_py_pb2",
+    ],
+    default_runtime = "@com_google_protobuf//:protobuf_python",
+    protoc = "@com_google_protobuf//:protoc",
 )
 

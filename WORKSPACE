@@ -39,9 +39,10 @@ bind(
     actual = "@six_archive//:six",
 )
 
-bazel_version="0.7.0"
+
+# Using protobuf version 3.4.1
 http_archive(
     name = "com_google_protobuf",
-    url = "https://github.com/bazelbuild/bazel/archive/" + bazel_version + ".zip",
-    strip_prefix = "bazel-" + bazel_version + "/third_party/protobuf/3.4.0",
+    strip_prefix = "protobuf-3.4.1",
+    urls = ["https://github.com/google/protobuf/archive/v3.4.1.zip"],
 )
