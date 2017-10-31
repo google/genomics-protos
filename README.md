@@ -1,14 +1,17 @@
 # Genomics protos
 
-This project contains
+This project contains protocol buffer definitions for working with
+genomics data.  These definitions are based on the
+`google.genomics.v1.*` protos from
+[googleapis](https://github.com/googleapis/googleapis), but with the
+API-specific pieces removed.
 
-* protocol buffer definitions for working with genomics data.
-* Python versions of some `google.genomics.v1.*` protos from
-[googleapis](https://github.com/googleapis/googleapis)
+For convenience, this package also contains pre-compiled Python versions of
+the protobufs which can be installed using pip via the instructions below.
 
 ## License
 
-Thie code is licensed under the terms of the [Apache license](LICENSE).
+This code is licensed under the terms of the [Apache license](LICENSE).
 
 ## Disclaimer
 
