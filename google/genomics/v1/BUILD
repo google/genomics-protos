@@ -125,8 +125,8 @@ py_proto_library(
 # ----------------------------------------------------------------------
 
 proto_library(
-    name = "reads_proto",
-    srcs = ["reads.proto"],
+    name = "readalignment_proto",
+    srcs = ["readalignment.proto"],
     deps = [
         ":cigar_proto",
         ":position_proto",
@@ -135,8 +135,8 @@ proto_library(
 )
 
 cc_proto_library(
-    name = "reads_cc_pb2",
-    srcs = ["reads.proto"],
+    name = "readalignment_cc_pb2",
+    srcs = ["readalignment.proto"],
     deps = [
         ":cigar_cc_pb2",
         ":position_cc_pb2",
@@ -147,8 +147,8 @@ cc_proto_library(
 )
 
 py_proto_library(
-    name = "reads_py_pb2",
-    srcs = ["reads.proto"],
+    name = "readalignment_py_pb2",
+    srcs = ["readalignment.proto"],
     deps = [
         ":cigar_py_pb2",
         ":position_py_pb2",
